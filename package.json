@@ -27,11 +27,7 @@
     "test:watch": "npm run test -- --watch",
     "check": "npm run lint && npm run test",
     "prepare": "npm run build",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "build:commonjs": "babel src --out-dir lib",
-    "build:umd": "cross-env NODE_ENV=development webpack src/sqlFormatter.js dist/sql-formatter.js",
-    "build:umd:min": "cross-env NODE_ENV=production webpack src/sqlFormatter.js dist/sql-formatter.min.js",
-    "prepublishOnly": "npm run clean && npm run check && npm run build"
+    "build": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -48,7 +44,6 @@
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.1.0",
     "babel-jest": "^17.0.2",
-    "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-class-properties": "^6.11.5",
     "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
@@ -61,8 +56,7 @@
     "eslint-config-zt": "^1.3.0",
     "eslint-plugin-react": "^7.6.1",
     "jest": "^17.0.2",
-    "rimraf": "^2.3.4",
-    "webpack": "^1.13.1"
+    "rimraf": "^2.3.4"
   },
   "jest": {
     "testPathDirs": [
